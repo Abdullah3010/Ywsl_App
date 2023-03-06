@@ -1,6 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ywsl_app/config/themes/light_theme.dart';
+import 'features/auth/presentation/screens/login.dart';
 import 'injector.dart';
 import 'observer.dart';
 
@@ -20,14 +22,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter Demo Home Page'),
-        ),
-        body: const Center(
-          child: Text('Hello World'),
-        ),
-      ),
+      theme: myTheme,
+      debugShowCheckedModeBanner: false,
+      home: const LoginScreen(),
     );
   }
 }
