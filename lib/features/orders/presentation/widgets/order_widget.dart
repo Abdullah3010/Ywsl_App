@@ -26,30 +26,53 @@ class OrderWidget extends StatelessWidget {
           ),
         ],
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Row(
         children: [
-          Text(
-            order.name,
-            style: Theme.of(context).textTheme.headlineLarge!,
+          Expanded(
+            flex: 5,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  order.name,
+                  style: Theme.of(context).textTheme.headlineLarge!,
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  order.description,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                const SizedBox(height: 8),
+                Row(
+                  children: [
+                    Text(
+                      order.from,
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                    const SizedBox(width: 8),
+                    Text(
+                      "----->",
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                    const SizedBox(width: 8),
+                    Text(
+                      order.to,
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
-          const SizedBox(height: 8),
-          Text(
-            order.description,
-            style: Theme.of(context).textTheme.bodyMedium,
-          ),
-          const SizedBox(height: 8),
-          Row(
-            children: [
-              Text(
-                order.from,
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-              Text(
-                order.to,
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-            ],
+          Expanded(
+            flex: 1,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(order.status),
+              ],
+            ),
           ),
         ],
       ),

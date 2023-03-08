@@ -6,6 +6,7 @@ class Order {
   final String from;
   final String to;
   final String status;
+  final double price;
 
   Order({
     required this.id,
@@ -15,6 +16,7 @@ class Order {
     required this.from,
     required this.to,
     required this.status,
+    required this.price,
   });
 
   

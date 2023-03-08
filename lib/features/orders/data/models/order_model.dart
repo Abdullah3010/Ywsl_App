@@ -8,6 +8,8 @@ class OrderModel extends Order {
     required super.date,
     required super.from,
     required super.to,
+    required super.price,
     super.status = 'pending',
+    
   });
 }

@@ -6,18 +6,6 @@ import '../widgets/order_widget.dart';
 class ListOfOrders extends StatelessWidget {
   ListOfOrders({super.key});
 
-  List<OrderModel> orders = [
-    OrderModel(
-      id: "1",
-      name: "first",
-      description: "description",
-      date: DateTime.now(),
-      from: "from",
-      to: "to",
-      status: "status",
-    ),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,9 +21,10 @@ class ListOfOrders extends StatelessWidget {
               name: "first",
               description: "description",
               date: DateTime.now(),
-              from: "from",
-              to: "to",
+              from: "Helwan",
+              to: "Cairo",
               status: "status",
+              price: 100,
             ),
           );
         },
