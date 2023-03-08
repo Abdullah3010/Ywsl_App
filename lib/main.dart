@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ywsl_app/config/themes/light_theme.dart';
+import 'package:ywsl_app/features/orders/presentation/screens/list_of_orders.dart';
 import 'features/auth/presentation/screens/login.dart';
 import 'injector.dart';
 import 'observer.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: myTheme,
       debugShowCheckedModeBanner: false,
-      home: const LoginScreen(),
+      home: ListOfOrders(),
     );
   }
 }

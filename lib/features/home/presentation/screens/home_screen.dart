@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ywsl_app/shared/widget/rounded_botton.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -8,11 +9,28 @@ class HomeScreen extends StatelessWidget {
         title: Text('Home'),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text(
-              'You have pushed the button this many times:',
+            RoundedButton(
+              child: Text('wasly'),
+              borderRadius: 20,
+              padding: EdgeInsets.symmetric(
+                vertical: MediaQuery.of(context).size.height * 0.1,
+              ),
+              width: MediaQuery.of(context).size.width * 0.4,
+              onPressed: () {
+                
+              },
+            ),
+            RoundedButton(
+              child: Text('Orders'),
+              borderRadius: 20,
+              padding: EdgeInsets.symmetric(
+                vertical: MediaQuery.of(context).size.height * 0.1,
+              ),
+              width: MediaQuery.of(context).size.width * 0.4,
+              onPressed: () {},
             ),
           ],
         ),

@@ -8,6 +8,7 @@ class RoundedButton extends StatelessWidget {
   final double? borderRadius;
   final EdgeInsetsGeometry margin;
   final EdgeInsetsGeometry padding;
+  final double? width;
 
   const RoundedButton({
     super.key,
@@ -21,6 +22,7 @@ class RoundedButton extends StatelessWidget {
       horizontal: 50,
       vertical: 12,
     ),
+    this.width,
   });
 
   @override
@@ -28,8 +30,9 @@ class RoundedButton extends StatelessWidget {
     return MaterialButton(
       color: AppColors.primaryColor,
       padding: padding,
+      minWidth: width,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(100),
+        borderRadius: BorderRadius.circular(borderRadius!),
       ),
       onPressed: () {
         onPressed();
