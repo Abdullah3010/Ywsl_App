@@ -11,6 +11,7 @@ class InputField extends StatelessWidget {
   final int? maxLines;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
+  final double? width;
   EdgeInsets? padding;
   InputField({
     this.label,
@@ -24,13 +25,15 @@ class InputField extends StatelessWidget {
     this.suffixIcon,
     this.prefixIcon,
     this.padding,
+    this.width,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.8,
+    return Container(
+      width: width ?? MediaQuery.of(context).size.width * 0.8,
+      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       child: TextFormField(
         controller: controller,
         decoration: inputDecoration ??

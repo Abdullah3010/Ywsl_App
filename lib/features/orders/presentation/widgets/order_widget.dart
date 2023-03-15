@@ -34,7 +34,7 @@ class OrderWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  order.name,
+                  order.description,
                   style: Theme.of(context).textTheme.headlineLarge!,
                 ),
                 const SizedBox(height: 8),

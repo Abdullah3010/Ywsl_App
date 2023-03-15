@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ywsl_app/features/orders/data/models/order_model.dart';
 
 import '../widgets/order_widget.dart';
+import 'order_details.dart';
 
 class ListOfOrders extends StatelessWidget {
   ListOfOrders({super.key});
@@ -15,16 +16,39 @@ class ListOfOrders extends StatelessWidget {
       body: ListView.builder(
         itemCount: 10,
         itemBuilder: (context, index) {
-          return OrderWidget(
-            order: OrderModel(
-              id: "1",
-              name: "first",
-              description: "description",
-              date: DateTime.now(),
-              from: "Helwan",
-              to: "Cairo",
-              status: "status",
-              price: 100,
+          return InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => OrderDetails(
+                    order: OrderModel(
+                      id: "1",
+                      quantity: 1,
+                      description: "description",
+                      date: DateTime.now(),
+                      from: "Helwan",
+                      to: "Cairo",
+                      status: "status",
+                      price: 100,
+                      weight: 150,
+                    ),
+                  ),
+                ),
+              );
+            },
+            child: OrderWidget(
+              order: OrderModel(
+                id: "1",
+                quantity: 1,
+                description: "description",
+                date: DateTime.now(),
+                from: "Helwan",
+                to: "Cairo",
+                status: "status",
+                price: 100,
+                weight: 150,
+              ),
             ),
           );
         },
